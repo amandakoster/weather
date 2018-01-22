@@ -5,17 +5,24 @@ class SearchBar extends React.Component{
         super(props);
         this.state = {
             term : ''
+
         };
+        this.onInputChange = this.onInputChange.bind(this)
     }
 
     onInputChange(e){
-        console.log(event.target.value)
+        console.log(e.target.value)
+        this.setState( {term: e.target.value} )
     }
 
-    
+    onFormSubit(e){
+        e.preventDefault();
+        }
+
     render(){
         return(
-            <form className="input-group">
+            <form onSubmit= {this.onFormSubit}
+            className="input-group">
                 <input 
                 placeholder="Get a 5 day-forcast in your favorite cities"
                 className="form-control"
