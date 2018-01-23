@@ -7,10 +7,15 @@ const ROOT_URL = `https://api.openweathermap.org/data/2.5/forecast?appid=${API_K
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 export function fetchWeather(city){
-    console.log('hit fetchWeather')
+// Create a URL
     const url = `${ROOT_URL}&q=${city},us`;
+
+//Make AJAX call
     const request = axios.get(url);
 
+    // console.log('Request:', request)
+
+//Return a promise:
     return {
         type: FETCH_WEATHER,
         payload: request
