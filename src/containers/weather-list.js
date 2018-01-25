@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Sparklines, SparklinesLine };
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 class WeatherList extends React.Component {
 
