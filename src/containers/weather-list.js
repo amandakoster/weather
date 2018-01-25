@@ -1,21 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import Charts from '../components/charts';
 
 class WeatherList extends React.Component {
 
     renderWeather(cityData){
         const name = cityData.city.name;
         const temps = cityData.list.map(weather => weather.main.temp)
-        console.log('temps', temps)
 
         return(
             <tr key={name}>
                 <td>{name}</td>
                 <td>
-                <Sparklines height={120} width={180} data={temps}>
-                    <SparklinesLine color="green" />
-                </Sparklines>
+                <Charts data={temps} color='orange' />
                 </td>
             </tr>
         );
