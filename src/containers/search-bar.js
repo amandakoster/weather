@@ -24,13 +24,13 @@ class SearchBar extends React.Component{
     render(){
         return(
             <form onSubmit= {this.onFormSubmit}
-            className="input-group">
+            className="form-inline">
                 <input 
                 placeholder="Get a 5 day-forcast in your favorite cities"
                 className="form-control"
                 value={this.state.term}
                 onChange={this.onInputChange} />
-            <span className="input-group-button">
+            <span className="btn">
                 <button type="submit" className="btn btn-secondary">Submit</button>
             </span>
             </form>

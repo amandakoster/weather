@@ -3,8 +3,12 @@ td, th {
     text-align: center !important;
 }
 
-.input-group {
+.form-inline {
     margin: 20px 0px;
+}
+
+input {
+    width: 100%;
 }
 
 svg {
@@ -15,3 +19,4 @@ td:first-of-type, td:first-of-type > div {
     height: 200px;
     width: 250px;
 }
+
