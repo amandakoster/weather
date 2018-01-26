@@ -6,16 +6,16 @@ class WeatherList extends React.Component {
 
     renderWeather(cityData){
         const name = cityData.city.name;
-        const temps = cityData.list.map(weather => weather.main.temp)
+        const temps = _.map(cityData.list.map(weather => weather.main.temp), (temp) =>temp - 459.67);
         const pressures = cityData.list.map(weather => weather.main.pressure)
         const humidities = cityData.list.map(weather => weather.main.humidity)
 
         return(
             <tr key={name}>
                 <td>{name}</td>
-                <td><Charts data={temps} color='orange' /></td>
-                <td><Charts data={pressures} color='red' /></td>
-                <td><Charts data={humidities} color='blue' /></td>
+                <td><Charts data={temps} color='orange' units='F' /></td>
+                <td><Charts data={pressures} color='red' units='hPa'/></td>
+                <td><Charts data={humidities} color='blue' units='%'/></td>
             </tr>
         );
     }
@@ -27,9 +27,9 @@ class WeatherList extends React.Component {
                     <thead>
                     <tr>
                     <th>City</th>
-                    <th>Temperature</th>
-                    <th>Preassure</th>
-                    <th>Humidity</th>
+                    <th>Temperature (K)</th>
+                    <th>Preassure (hPa)</th>
+                    <th>Humidity (%)</th>
                     </tr>
                     </thead>
                 <tbody>
