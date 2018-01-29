@@ -8,7 +8,7 @@ td, th {
 }
 
 input {
-    width: 100%;
+    width: 50% !important;
 }
 
 svg {
