@@ -5,7 +5,7 @@ export default function(state = [], action){
 
     switch(action.type){
         case FETCH_WEATHER:
-//return new instance of state
+//return NEW instance (object) of state. Takes an existing array flattens it out and creates a new one.
 //OR return state.concat( [ action.payload.data ] );
         return [ action.payload.data, ...state ];
     }
